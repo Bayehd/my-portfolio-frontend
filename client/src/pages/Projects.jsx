@@ -16,6 +16,7 @@ function Projects() {
     role: '',
     outcome: '',
     technologies: '',
+    image: '',    
     liveUrl: '',
     githubUrl: ''
   })
@@ -77,6 +78,7 @@ function Projects() {
         role: '',
         outcome: '',
         technologies: '',
+        image: '',
         liveUrl: '',
         githubUrl: ''
       })
@@ -97,6 +99,7 @@ function Projects() {
       technologies: Array.isArray(project.technologies) 
         ? project.technologies.join(', ') 
         : '',
+        image: project.image || '', 
       liveUrl: project.liveUrl || '',
       githubUrl: project.githubUrl || ''
     })
@@ -124,6 +127,7 @@ function Projects() {
       role: '',
       outcome: '',
       technologies: '',
+      image: '',
       liveUrl: '',
       githubUrl: ''
     })
@@ -281,6 +285,26 @@ function Projects() {
                     }}
                   />
                 </div>
+                <div style={{ marginBottom: '1rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+                  Image URL
+                </label>
+                <input
+                  type="text"
+                  name="image"
+                  value={formData.image}
+                  onChange={handleInputChange}
+                  placeholder="/images/Psyflow.png"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem',
+                    borderRadius: '8px',
+                    border: '1px solid var(--color-border)',
+                    background: 'var(--color-bg)',
+                    color: 'var(--color-text)'
+                  }}
+                />
+              </div>
 
                 <div style={{ marginBottom: '1rem' }}>
                   <label style={{ display: 'block', marginBottom: '0.5rem' }}>
@@ -353,26 +377,33 @@ function Projects() {
                 key={project.id}
                 className={`project ${index % 2 === 1 ? 'reverse' : ''}`}
               >
-                {/* Project Image - Optional, can be added later */}
+                {/* Project Image */}
                 <div className="project-image">
-                  <div 
-                    style={{ 
-                      width: '100%', 
-                      height: '100%', 
-                      background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: 'var(--color-primary)',
-                      fontSize: '2rem',
-                      fontWeight: 'bold'
-                    }}
-                  >
-                    {project.title.charAt(0)}
-                  </div>
+                  {project.image ? (
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  ) : (
+                    <div 
+                      style={{ 
+                        width: '100%', 
+                        height: '100%', 
+                        background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'var(--color-primary)',
+                        fontSize: '2rem',
+                        fontWeight: 'bold'
+                      }}
+                    >
+                      {project.title.charAt(0)}
+                    </div>
+                  )}
                   <div className="project-image-overlay"></div>
                 </div>
-
                 {/* Project Details */}
                 <div className="project-details">
                   <h2>{project.title}</h2>
