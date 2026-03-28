@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL || 'https://my-portfolio-backend-67aw.onrender.com/api';
 
 // Projects API
 export const projectsAPI = {
