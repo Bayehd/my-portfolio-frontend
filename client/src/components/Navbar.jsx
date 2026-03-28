@@ -9,6 +9,7 @@ const navigationLinks = [
   { name: 'about', path: '/about' },
   { name: 'projects', path: '/projects' },
   { name: 'services', path: '/services' },
+  { name: 'references', path: '/references' },
   { name: 'contact', path: '/contact' },
 ]
 

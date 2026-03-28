@@ -1,63 +1,9 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { servicesAPI } from '../services/api'
 import '../styles/services.css'
 
-//Services data array containing all information about my service
-const services = [
-  {
-    id: 1,
-    title: 'Web Development',
-    description: 'Building responsive and functional web applications using modern technologies. From service management systems to interactive dashboards.',
-    image: '/images/webdev.jpg',
-    features: [
-      'Responsive design for all devices',
-      'Full-stack development (React, Next.js, Node.js)',
-      'Database integration (MongoDB, Firebase)',
-      'Real-time features and notifications',
-      'API development and integration',
-    ],
-  },
-  {
-    id: 2,
-    title: 'Mobile App Development',
-    description: 'Creating cross-platform mobile applications using React Native that work seamlessly on both iOS and Android platforms.',
-    image: '/images/mobile app.jpg',
-    features: [
-      'Cross-platform development (iOS & Android)',
-      'Real-time synchronization',
-      'Push notifications',
-      'GPS and location services',
-      'Offline functionality',
-    ],
-  },
-  {
-    id: 3,
-    title: 'Full-Stack Development',
-    description: 'End-to-end application development from database design to user interface. Building complete solutions that solve real-world problems.',
-    image: '/images/full-stack.jpg',
-    features: [
-      'Frontend & backend development',
-      'Database design and management',
-      'Authentication and security',
-      'Cloud deployment (Firebase, Vercel)',
-      'System architecture',
-    ],
-  },
-  {
-    id: 4,
-    title: 'Custom Software Solutions',
-    description: 'Developing tailored software applications to address specific business needs and streamline operations.',
-    image: '/images/softwaresolutions.jpg',
-    features: [
-      'Service desk and ticketing systems',
-      'Management information systems',
-      'Automation tools',
-      'Third-party API integration',
-      'Custom dashboards and reporting',
-    ],
-  },
-]
-
-//Process steps data
+//Process steps data 
 const processSteps = [
   {
     id: 1,
@@ -85,8 +31,129 @@ const processSteps = [
   },
 ]
 
-// ServicesPage Component
+// ServicesPage Component with CRUD
 function Services() {
+  const [services, setServices] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [showForm, setShowForm] = useState(false)
+  const [editingService, setEditingService] = useState(null)
+  const [formData, setFormData] = useState({
+    title: '',
+    description: '',
+    features: '',
+    image: ''
+  })
+
+  // Fetch services from backend on component mount
+  useEffect(() => {
+    fetchServices()
+  }, [])
+
+  const fetchServices = async () => {
+    try {
+      setLoading(true)
+      const response = await servicesAPI.getAll()
+      if (response.data.success) {
+        setServices(response.data.data)
+      }
+      setError(null)
+    } catch (err) {
+      setError('Failed to load services')
+      console.error('Error fetching services:', err)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    
+    try {
+      // Convert features string to array
+      const serviceData = {
+        ...formData,
+        features: formData.features.split(',').map(feat => feat.trim())
+      }
+
+      if (editingService) {
+        // Update existing service
+        await servicesAPI.update(editingService.id, serviceData)
+      } else {
+        // Create new service
+        await servicesAPI.create(serviceData)
+      }
+
+      // Reset form and refresh services
+      setShowForm(false)
+      setEditingService(null)
+      setFormData({
+        title: '',
+        description: '',
+        features: '',
+        image: ''
+      })
+      fetchServices()
+    } catch (err) {
+      console.error('Error saving service:', err)
+      alert('Failed to save service. Please try again.')
+    }
+  }
+
+  const handleEdit = (service) => {
+    setEditingService(service)
+    setFormData({
+      title: service.title,
+      description: service.description,
+      features: Array.isArray(service.features) 
+        ? service.features.join(', ') 
+        : '',
+      image: service.image || ''
+    })
+    setShowForm(true)
+  }
+
+  const handleDelete = async (id) => {
+    if (window.confirm('Are you sure you want to delete this service?')) {
+      try {
+        await servicesAPI.delete(id)
+        fetchServices()
+      } catch (err) {
+        console.error('Error deleting service:', err)
+        alert('Failed to delete service. Please try again.')
+      }
+    }
+  }
+
+  const handleCancel = () => {
+    setShowForm(false)
+    setEditingService(null)
+    setFormData({
+      title: '',
+      description: '',
+      features: '',
+      image: ''
+    })
+  }
+
+  if (loading) {
+    return (
+      <div className="services-page">
+        <div className="services-container">
+          <p style={{ textAlign: 'center', padding: '2rem' }}>Loading services...</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="services-page">
       <div className="services-container">
@@ -95,43 +162,220 @@ function Services() {
           <h1>My Services</h1>
           <p className="text-muted">
             I build web and mobile applications that solve real problems. 
-        Every project is an opportunity to learn and create something meaningful.
+            Every project is an opportunity to learn and create something meaningful.
           </p>
+          
+          {/* Add Service Button */}
+          <button 
+            onClick={() => setShowForm(true)}
+            className="btn btn-primary"
+            style={{ marginTop: '1rem' }}
+          >
+            + Add New Service
+          </button>
         </div>
+
+        {/* Error Message */}
+        {error && (
+          <div style={{ 
+            color: '#ef4444', 
+            padding: '1rem', 
+            textAlign: 'center',
+            marginBottom: '1rem' 
+          }}>
+            {error}
+          </div>
+        )}
+
+        {/* Service Form Modal */}
+        {showForm && (
+          <div className="modal-overlay active">
+            <div className="modal-content">
+              <h2>{editingService ? 'Edit Service' : 'Add New Service'}</h2>
+              
+              <form onSubmit={handleSubmit} style={{ marginTop: '1.5rem' }}>
+                <div style={{ marginBottom: '1rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+                    Title *
+                  </label>
+                  <input
+                    type="text"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleInputChange}
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      borderRadius: '8px',
+                      border: '1px solid var(--color-border)',
+                      background: 'var(--color-bg)',
+                      color: 'var(--color-text)'
+                    }}
+                  />
+                </div>
+
+                <div style={{ marginBottom: '1rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+                    Description *
+                  </label>
+                  <textarea
+                    name="description"
+                    value={formData.description}
+                    onChange={handleInputChange}
+                    required
+                    rows="4"
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      borderRadius: '8px',
+                      border: '1px solid var(--color-border)',
+                      background: 'var(--color-bg)',
+                      color: 'var(--color-text)',
+                      resize: 'vertical'
+                    }}
+                  />
+                </div>
+
+                <div style={{ marginBottom: '1rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+                    Features 
+                  </label>
+                  <textarea
+                    name="features"
+                    value={formData.features}
+                    onChange={handleInputChange}
+                    rows="4"
+                    placeholder="Responsive design, Full-stack development, API integration"
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      borderRadius: '8px',
+                      border: '1px solid var(--color-border)',
+                      background: 'var(--color-bg)',
+                      color: 'var(--color-text)',
+                      resize: 'vertical'
+                    }}
+                  />
+                </div>
+
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+                    Image URL
+                  </label>
+                  <input
+                    type="text"
+                    name="image"
+                    value={formData.image}
+                    onChange={handleInputChange}
+                    placeholder="/images/service.jpg or https://..."
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      borderRadius: '8px',
+                      border: '1px solid var(--color-border)',
+                      background: 'var(--color-bg)',
+                      color: 'var(--color-text)'
+                    }}
+                  />
+                </div>
+
+                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end' }}>
+                  <button
+                    type="button"
+                    onClick={handleCancel}
+                    className="btn btn-secondary"
+                  >
+                    Cancel
+                  </button>
+                  <button type="submit" className="btn btn-primary">
+                    {editingService ? 'Update Service' : 'Add Service'}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
 
         {/* Services Grid */}
         <div className="services-grid-page">
-          {services.map((service) => (
-            <article key={service.id} className="service-card-full">
-              {/* Service Image */}
-              <div className="service-card-image">
-                <img
-                  src={service.image || "/placeholder.svg"}
-                  alt={`${service.title} service illustration`}
-                />
-                <div className="service-image-overlay"></div>
-              </div>
+          {services.length === 0 ? (
+            <p style={{ textAlign: 'center', padding: '2rem' }}>
+              No services yet. Click "Add New Service" to get started!
+            </p>
+          ) : (
+            services.map((service) => (
+              <article key={service.id} className="service-card-full">
+                {/* Service Image */}
+                <div className="service-card-image">
+                  {service.image ? (
+                    <img
+                      src={service.image}
+                      alt={`${service.title} service illustration`}
+                    />
+                  ) : (
+                    <div 
+                      style={{ 
+                        width: '100%', 
+                        height: '200px', 
+                        background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'var(--color-primary)',
+                        fontSize: '3rem',
+                        fontWeight: 'bold'
+                      }}
+                    >
+                      {service.title.charAt(0)}
+                    </div>
+                  )}
+                  <div className="service-image-overlay"></div>
+                </div>
 
-              {/* Service Content */}
-              <div className="service-card-content">
-                <h2>{service.title}</h2>
-                <p>{service.description}</p>
+                {/* Service Content */}
+                <div className="service-card-content">
+                  <h2>{service.title}</h2>
+                  <p>{service.description}</p>
 
-                {/* Features List */}
-                <ul className="service-features">
-                  {service.features.map((feature) => (
-                    <li key={feature}>
-                      {/* Checkmark Icon */}
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
+                  {/* Features List */}
+                  {service.features && service.features.length > 0 && (
+                    <ul className="service-features">
+                      {service.features.map((feature, index) => (
+                        <li key={index}>
+                          {/* Checkmark Icon */}
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {/* Edit and Delete Buttons */}
+                  <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem' }}>
+                    <button
+                      onClick={() => handleEdit(service)}
+                      className="btn btn-secondary"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => handleDelete(service.id)}
+                      className="btn"
+                      style={{ 
+                        background: '#ef4444',
+                        color: 'white'
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </article>
+            ))
+          )}
         </div>
 
         {/* Process Section */}
@@ -157,8 +401,8 @@ function Services() {
         <div className="services-cta">
           <h2>Ready to Start Your Project?</h2>
           <p className="text-muted">
-           Whether you need a web application, mobile app, or custom solution, 
-    let's discuss how I can help bring your project to life.
+            Whether you need a web application, mobile app, or custom solution, 
+            let's discuss how I can help bring your project to life.
           </p>
           <Link to="/contact" className="btn btn-primary">
             Contact Me
