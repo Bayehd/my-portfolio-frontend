@@ -294,7 +294,7 @@ function Projects() {
                   name="image"
                   value={formData.image}
                   onChange={handleInputChange}
-                  placeholder="/images/Psyflow.png"
+                  placeholder="/images/Psyflow.png or any image link"
                   style={{
                     width: '100%',
                     padding: '0.75rem',
