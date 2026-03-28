@@ -1,0 +1,474 @@
+:root {
+  /* Primary Colors */
+  --color-primary: #0d9488;          /* Teal - main brand color */
+  --color-primary-dark: #0f766e;     /* Darker teal for hover states */
+  --color-primary-light: #14b8a6;    /* Lighter teal for accents */
+  
+  /* Background Colors */
+  --color-background: #0f172a;       /* Dark navy background */
+  --color-card: #1e293b;             /* Slightly lighter card background */
+  --color-card-hover: #334155;       /* Card hover state */
+  
+  /* Text Colors */
+  --color-text: #f8fafc;             /* Primary text - off-white */
+  --color-text-muted: #94a3b8;       /* Secondary/muted text */
+  --color-text-dark: #0f172a;        /* Dark text for light backgrounds */
+  
+  /* Border Colors */
+  --color-border: #334155;           /* Border color */
+  --color-border-light: #475569;     /* Lighter border */
+  
+  /* Status Colors */
+  --color-success: #22c55e;          /* Success/positive */
+  --color-error: #ef4444;            /* Error/destructive */
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;             /* 4px */
+  --spacing-sm: 0.5rem;              /* 8px */
+  --spacing-md: 1rem;                /* 16px */
+  --spacing-lg: 1.5rem;              /* 24px */
+  --spacing-xl: 2rem;                /* 32px */
+  --spacing-2xl: 3rem;               /* 48px */
+  --spacing-3xl: 4rem;               /* 64px */
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;             /* 6px */
+  --radius-md: 0.5rem;               /* 8px */
+  --radius-lg: 0.75rem;              /* 12px */
+  --radius-xl: 1rem;                 /* 16px */
+  --radius-full: 9999px;             /* Fully rounded */
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  
+  /* Container Width */
+  --container-max: 1200px;
+}
+
+/* ========================================
+   CSS Reset and Base Styles
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+/* ========================================
+   Layout Classes
+   ======================================== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-3xl) 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+}
+
+/* ========================================
+   Grid System
+   ======================================== */
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* Responsive grid breakpoints */
+@media (min-width: 640px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ========================================
+   Flexbox Utilities
+   ======================================== */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
+
+/* ========================================
+   Button Styles
+   ======================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-card);
+  border-color: var(--color-border-light);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Card Styles
+   ======================================== */
+.card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+}
+
+/* ========================================
+   Form Styles
+   ======================================== */
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.form-label .required {
+  color: var(--color-error);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.875rem;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================================
+   Badge/Tag Styles
+   ======================================== */
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  background-color: rgba(13, 148, 136, 0.2);
+  color: var(--color-primary-light);
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+}
+
+.skill-tag:hover {
+  border-color: var(--color-primary);
+}
+
+/* ========================================
+   Icon Styles
+   ======================================== */
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-lg {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: rgba(13, 148, 136, 0.15);
+  color: var(--color-primary);
+}
+
+.icon-box-sm {
+  width: 40px;
+  height: 40px;
+}
+
+/* ========================================
+   Text Utilities
+   ======================================== */
+.text-center { text-align: center; }
+.text-primary { color: var(--color-primary); }
+.text-muted { color: var(--color-text-muted); }
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+
+/* ========================================
+   Spacing Utilities
+   ======================================== */
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+.mt-2xl { margin-top: var(--spacing-2xl); }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+/* ========================================
+   Responsive Utilities
+   ======================================== */
+.hide-mobile {
+  display: none;
+}
+
+.show-mobile {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: flex;
+  }
+  
+  .show-mobile {
+    display: none;
+  }
+  
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+}
+
+/* ========================================
+   Animation Keyframes
+   ======================================== */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-text);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ========================================
+   Image Styles
+   ======================================== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-rounded {
+  border-radius: var(--radius-lg);
+}

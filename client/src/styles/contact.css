@@ -1,0 +1,220 @@
+.contact-page {
+  padding: var(--spacing-3xl) 0;
+}
+
+.contact-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Page Header */
+.contact-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-header h1 {
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-header p {
+  font-size: 1.125rem;
+}
+
+/* Contact Grid - Two Columns */
+.contact-grid {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Contact Info Panel */
+.contact-info-panel {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+}
+
+.contact-info-panel h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-info-panel > p {
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Contact Details List */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.contact-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(13, 148, 136, 0.15);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.contact-item-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-item-content p:first-child {
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.contact-item-content p:last-child,
+.contact-item-content a {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.contact-item-content a:hover {
+  color: var(--color-primary);
+}
+
+/* Social Links */
+.social-section {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.social-section p {
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.social-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.social-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Contact Form Panel */
+.contact-form-panel {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+}
+
+.contact-form-panel h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-form-panel > p {
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Form Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Form Row for Two Columns */
+.form-row {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Submit Button Full Width */
+.contact-form .btn {
+  width: 100%;
+  padding: var(--spacing-md);
+}
+
+.contact-form .btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Form Note */
+.form-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Loading Spinner in Button */
+.btn-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-text);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,345 @@
+
+
+
+/**
+ * Navbar Styles
+ * Provides styling for the navigation bar with responsive design
+ */
+
+/* Main navbar container - sticky at top */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styles */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #106ebe;
+  font-weight: 700;
+  font-size: 1.25rem;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 0.8;
+}
+
+/* Custom hexagon logo */
+.logo-hexagon {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-hexagon polygon {
+  fill: #106ebe;
+  transition: fill 0.3s ease;
+}
+
+.logo-hexagon text {
+  fill: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-logo:hover .logo-hexagon polygon {
+  fill: #0d5aa3;
+}
+
+.logo-text {
+  color: #333;
+}
+
+/* Desktop navigation links */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #106ebe;
+  background-color: #f0f7ff;
+}
+
+/* Active link indicator */
+.nav-link.active {
+  color: #106ebe;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background-color: #106ebe;
+}
+
+/* Mobile menu button - hidden on desktop */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  color: #106ebe;
+}
+
+/* Mobile menu - hidden by default */
+.mobile-menu {
+  display: none;
+}
+
+/* Tablet and Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Hide desktop navigation */
+  .navbar-links {
+    display: none;
+  }
+
+  /* Show mobile menu button */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  /* Mobile menu dropdown */
+  .mobile-menu {
+    display: block;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .mobile-menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-menu-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link.active {
+    color: #106ebe;
+    background-color: #f0f7ff;
+  }
+
+  /* Adjust logo size on mobile */
+  .navbar-logo {
+    font-size: 1.1rem;
+  }
+
+  .logo-hexagon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1rem;
+  }
+
+  .logo-text {
+    display: none; /* Hide "Portfolio" text on very small screens */
+  }
+}
+
+/*.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+}
+
+.navbar-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+/* Logo Styles *
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+}
+
+.logo-hexagon {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-hexagon polygon {
+  fill: var(--color-primary);
+}
+
+.logo-hexagon text {
+  fill: var(--color-text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.logo-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Desktop Navigation Links 
+.navbar-links {
+  display: none;
+  align-items: center;
+  gap: var(--spacing-xl);
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  padding: var(--spacing-sm) 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-primary);
+}
+
+/* Mobile Menu Button *
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.mobile-menu-btn:hover {
+  background-color: var(--color-card);
+  color: var(--color-text);
+}
+
+/* Mobile Menu *
+.mobile-menu {
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-md);
+}
+
+.mobile-menu-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background-color: var(--color-card);
+  color: var(--color-primary);
+}
+
+/* Responsive Styles *
+@media (min-width: 768px) {
+  .navbar-links {
+    display: flex;
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+  }
+  
+  .mobile-menu {
+    display: none;
+  }
+}
+*/

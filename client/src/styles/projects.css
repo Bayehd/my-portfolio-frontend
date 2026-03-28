@@ -1,0 +1,200 @@
+.projects-page {
+  padding: var(--spacing-3xl) 0;
+}
+
+.projects-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Page Header */
+.projects-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.projects-header h1 {
+  margin-bottom: var(--spacing-md);
+}
+
+.projects-header p {
+  font-size: 1.125rem;
+}
+
+/* Projects List */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xl);
+}
+
+/* Individual Project */
+.project {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 1024px) {
+  .project {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  
+  /* Alternate layout for odd projects */
+  .project.reverse .project-image {
+    order: 2;
+  }
+  
+  .project.reverse .project-details {
+    order: 1;
+  }
+}
+
+/* Project Image */
+.project-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.project-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.project-image:hover img {
+  transform: scale(1.05);
+}
+
+.project-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.7), transparent);
+}
+
+@media (min-width: 640px) {
+  .project-image img {
+    height: 320px;
+  }
+}
+
+/* Project Details */
+.project-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Technology Badges */
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Project Description */
+.project-description {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.8;
+}
+
+/* Role and Outcome Sections */
+.project-role,
+.project-outcome {
+  margin-bottom: var(--spacing-md);
+}
+
+.project-role h3,
+.project-outcome h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.project-role p,
+.project-outcome p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* Project Action Buttons */
+.project-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.project-actions .btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.project-actions .btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* GitHub Note Section */
+.github-note {
+  margin-top: var(--spacing-3xl);
+  text-align: center;
+}
+
+.github-note-card {
+  display: inline-block;
+  padding: var(--spacing-md) var(--spacing-xl);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.github-note-card p {
+  font-size: 0.875rem;
+}
+
+.github-note-card a {
+  font-weight: 500;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-content {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  margin-bottom: 0;
+}
