@@ -267,7 +267,7 @@ function Projects() {
 
                 <div style={{ marginBottom: '1rem' }}>
                   <label style={{ display: 'block', marginBottom: '0.5rem' }}>
-                    Technologies (comma-separated)
+                    Technologies 
                   </label>
                   <input
                     type="text"
