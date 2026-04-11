@@ -5,7 +5,7 @@ import '../styles/navbar.css'
 
 // Navigation links configuration for navigation on the navbar
 const navigationLinks = [
-  { name: 'home', path: '/' },
+    { name: 'home', path: '/home' },
   { name: 'about', path: '/about' },
   { name: 'projects', path: '/projects' },
   { name: 'services', path: '/services' },

@@ -8,6 +8,9 @@ import Services from './pages/Services'
 import References from './pages/References' 
 import Contact from './pages/Contact'
 import Users from './pages/Users'
+import Login from './pages/Login'           
+import Signup from './pages/Signup'         
+import Dashboard from './pages/Dashboard' 
 import './App.css'
 
 function App() {
@@ -20,13 +23,17 @@ function App() {
       <main className="main-content">
         <Routes>
           {/* Define routes for each page of the portfolio */}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />              
+          <Route path="/home" element={<Home />} /> 
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/services" element={<Services />} />
           <Route path="/references" element={<References />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/login" element={<Login />} />         
+          <Route path="/signup" element={<Signup />} />       
+          <Route path="/dashboard" element={<Dashboard />} /> 
         </Routes>
       </main>
       
