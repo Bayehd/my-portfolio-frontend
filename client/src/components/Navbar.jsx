@@ -46,8 +46,8 @@ function Navbar() {
     navigate('/login')
   }
 
-  // Determine which links to show
-  const linksToShow = isLoggedIn ? publicLinks : [...publicLinks, ...privateLinks]
+  // Show all links when logged in, only public when not logged in
+  const linksToShow = isLoggedIn ? [...publicLinks, ...privateLinks] : publicLinks
 
   return (
     <header className="navbar">

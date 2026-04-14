@@ -1,0 +1,67 @@
+{
+    "title": "signout",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 635,
+            "height": 857,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "http://localhost:5173/dashboard",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "http://localhost:5173/dashboard",
+                    "title": "client"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Toggle navigation menu",
+                    "aria/[role=\"image\"]"
+                ],
+                [
+                    "button > svg"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/nav/div/button/svg"
+                ],
+                [
+                    "pierce/button > svg"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 2
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Logout"
+                ],
+                [
+                    "div.mobile-menu button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/nav/div[2]/ul/li[8]/button"
+                ],
+                [
+                    "pierce/div.mobile-menu button"
+                ]
+            ],
+            "offsetY": 19.34375,
+            "offsetX": 289,
+            "duration": 683.5
+        }
+    ]
+}

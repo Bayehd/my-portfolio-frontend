@@ -20,11 +20,6 @@ function Dashboard() {
     setUser(JSON.parse(userData))
   }, [navigate])
 
-  const handleLogout = () => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('user')
-    navigate('/login')
-  }
 
   if (!user) {
     return <div>Loading...</div>
