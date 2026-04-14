@@ -1,0 +1,274 @@
+{
+    "title": "Signup",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 900,
+            "height": 856,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "http://localhost:5173/signup",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "http://localhost:5173/signup",
+                    "title": "client"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/First Name"
+                ],
+                [
+                    "#firstname"
+                ],
+                [
+                    "xpath///*[@id=\"firstname\"]"
+                ],
+                [
+                    "pierce/#firstname"
+                ]
+            ],
+            "offsetY": 3.7109375,
+            "offsetX": 159
+        },
+        {
+            "type": "change",
+            "value": "T",
+            "selectors": [
+                [
+                    "aria/First Name"
+                ],
+                [
+                    "#firstname"
+                ],
+                [
+                    "xpath///*[@id=\"firstname\"]"
+                ],
+                [
+                    "pierce/#firstname"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "t",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "Tom",
+            "selectors": [
+                [
+                    "aria/First Name"
+                ],
+                [
+                    "#firstname"
+                ],
+                [
+                    "xpath///*[@id=\"firstname\"]"
+                ],
+                [
+                    "pierce/#firstname"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Last Name"
+                ],
+                [
+                    "#lastname"
+                ],
+                [
+                    "xpath///*[@id=\"lastname\"]"
+                ],
+                [
+                    "pierce/#lastname"
+                ]
+            ],
+            "offsetY": 26.6171875,
+            "offsetX": 94
+        },
+        {
+            "type": "change",
+            "value": "D",
+            "selectors": [
+                [
+                    "aria/Last Name"
+                ],
+                [
+                    "#lastname"
+                ],
+                [
+                    "xpath///*[@id=\"lastname\"]"
+                ],
+                [
+                    "pierce/#lastname"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "d",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "Doe",
+            "selectors": [
+                [
+                    "aria/Last Name"
+                ],
+                [
+                    "#lastname"
+                ],
+                [
+                    "xpath///*[@id=\"lastname\"]"
+                ],
+                [
+                    "pierce/#lastname"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ],
+                [
+                    "pierce/#email"
+                ]
+            ],
+            "offsetY": 19.5234375,
+            "offsetX": 56
+        },
+        {
+            "type": "change",
+            "value": "1234@",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ],
+                [
+                    "pierce/#email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "2",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "1234@gmail.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ],
+                [
+                    "pierce/#email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#password"
+                ],
+                [
+                    "xpath///*[@id=\"password\"]"
+                ],
+                [
+                    "pierce/#password"
+                ]
+            ],
+            "offsetY": 7.4296875,
+            "offsetX": 49
+        },
+        {
+            "type": "change",
+            "value": "password12345",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "#password"
+                ],
+                [
+                    "xpath///*[@id=\"password\"]"
+                ],
+                [
+                    "pierce/#password"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Sign Up[role=\"button\"]"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/form/button"
+                ],
+                [
+                    "pierce/main button"
+                ]
+            ],
+            "offsetY": 17.9296875,
+            "offsetX": 33,
+            "duration": 458.19999998807907
+        }
+    ]
+}
