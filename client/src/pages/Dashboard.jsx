@@ -35,9 +35,6 @@ function Dashboard() {
       <div className="dashboard-container">
         <div className="dashboard-header">
           <h1>Welcome, {user.firstname}!</h1>
-          <button onClick={handleLogout} className="btn btn-secondary">
-            Logout
-          </button>
         </div>
 
         <div className="dashboard-grid">

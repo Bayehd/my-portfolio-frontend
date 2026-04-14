@@ -1,42 +1,53 @@
 'use client';
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import '../styles/navbar.css'
 
-// Navigation links configuration for navigation on the navbar
-const navigationLinks = [
-    { name: 'home', path: '/home' },
+// All navigation links
+const publicLinks = [
+  { name: 'home', path: '/home' },
   { name: 'about', path: '/about' },
+  { name: 'contact', path: '/contact' },
+]
+
+const privateLinks = [
   { name: 'projects', path: '/projects' },
   { name: 'services', path: '/services' },
   { name: 'references', path: '/references' },
-   { name: 'users', path: '/users' },
-  { name: 'contact', path: '/contact' },
+  { name: 'users', path: '/users' },
 ]
 
 // Navbar Component
 function Navbar() {
-  // State to track if mobile menu is open or closed
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  
-  // Get current location to highlight active nav link
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
-  /**
-   * Toggle the mobile menu visibility
-   * Called when user clicks the hamburger button
-   */
+  // Check if user is logged in
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    setIsLoggedIn(!!token)
+  }, [location])
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
-  /**
-   * Close the mobile menu
-   * Called when a navigation link is clicked
-   */
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false)
   }
+
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    setIsLoggedIn(false)
+    closeMobileMenu()
+    navigate('/login')
+  }
+
+  // Determine which links to show
+  const linksToShow = isLoggedIn ? publicLinks : [...publicLinks, ...privateLinks]
 
   return (
     <header className="navbar">
@@ -45,9 +56,7 @@ function Navbar() {
           {/* Custom Logo */}
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <svg viewBox="0 0 40 40" className="logo-hexagon">
-              {/* Hexagon polygon shape */}
               <polygon points="20,2 38,11 38,29 20,38 2,29 2,11" />
-              {/* Initials text inside hexagon */}
               <text x="20" y="24" textAnchor="middle">BA</text>
             </svg>
             <span className="logo-text">Portfolio</span>
@@ -55,7 +64,7 @@ function Navbar() {
 
           {/* Desktop Navigation Links */}
           <ul className="navbar-links">
-            {navigationLinks.map((link) => (
+            {linksToShow.map((link) => (
               <li key={link.path}>
                 <Link
                   to={link.path}
@@ -65,6 +74,19 @@ function Navbar() {
                 </Link>
               </li>
             ))}
+            
+            {/* Desktop Logout/Login */}
+            <li>
+              {isLoggedIn ? (
+                <button onClick={handleLogout} className="nav-link logout-btn">
+                  logout
+                </button>
+              ) : (
+                <Link to="/login" className="nav-link">
+                  login
+                </Link>
+              )}
+            </li>
           </ul>
 
           {/* Mobile Menu Toggle Button */}
@@ -75,15 +97,12 @@ function Navbar() {
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle navigation menu"
           >
-            {/* Hamburger or X icon based on menu state */}
             {isMobileMenuOpen ? (
-              // X icon when menu is open
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             ) : (
-              // Hamburger icon when menu is closed
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="3" y1="6" x2="21" y2="6"></line>
                 <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -93,11 +112,11 @@ function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Navigation Menu - Only visible when toggled */}
+        {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
           <div className="mobile-menu">
             <ul className="mobile-menu-links">
-              {navigationLinks.map((link) => (
+              {linksToShow.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
@@ -108,6 +127,19 @@ function Navbar() {
                   </Link>
                 </li>
               ))}
+              
+              {/* Mobile Logout/Login */}
+              <li>
+                {isLoggedIn ? (
+                  <button onClick={handleLogout} className="mobile-nav-link logout-btn">
+                    logout
+                  </button>
+                ) : (
+                  <Link to="/login" onClick={closeMobileMenu} className="mobile-nav-link">
+                    login
+                  </Link>
+                )}
+              </li>
             </ul>
           </div>
         )}

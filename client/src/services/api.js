@@ -2,38 +2,52 @@ import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_API_URL || 'https://my-portfolio-backend-67aw.onrender.com/api';
 
-// Projects API
+// Create axios instance
+const api = axios.create({
+  baseURL: API_URL
+});
+
+// Add token to all requests automatically
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+// Projects API - use 'api' instead of 'axios'
 export const projectsAPI = {
-    getAll: () => axios.get(`${API_URL}/projects`),
-    getById: (id) => axios.get(`${API_URL}/projects/${id}`),
-    create: (data) => axios.post(`${API_URL}/projects`, data),
-    update: (id, data) => axios.put(`${API_URL}/projects/${id}`, data),
-    delete: (id) => axios.delete(`${API_URL}/projects/${id}`)
+    getAll: () => api.get('/projects'),
+    getById: (id) => api.get(`/projects/${id}`),
+    create: (data) => api.post('/projects', data),
+    update: (id, data) => api.put(`/projects/${id}`, data),
+    delete: (id) => api.delete(`/projects/${id}`)
 };
 
 // Services API
 export const servicesAPI = {
-    getAll: () => axios.get(`${API_URL}/services`),
-    getById: (id) => axios.get(`${API_URL}/services/${id}`),
-    create: (data) => axios.post(`${API_URL}/services`, data),
-    update: (id, data) => axios.put(`${API_URL}/services/${id}`, data),
-    delete: (id) => axios.delete(`${API_URL}/services/${id}`)
+    getAll: () => api.get('/services'),
+    getById: (id) => api.get(`/services/${id}`),
+    create: (data) => api.post('/services', data),
+    update: (id, data) => api.put(`/services/${id}`, data),
+    delete: (id) => api.delete(`/services/${id}`)
 };
 
 // References API
 export const referencesAPI = {
-    getAll: () => axios.get(`${API_URL}/references`),
-    getById: (id) => axios.get(`${API_URL}/references/${id}`),
-    create: (data) => axios.post(`${API_URL}/references`, data),
-    update: (id, data) => axios.put(`${API_URL}/references/${id}`, data),
-    delete: (id) => axios.delete(`${API_URL}/references/${id}`)
+    getAll: () => api.get('/references'),
+    getById: (id) => api.get(`/references/${id}`),
+    create: (data) => api.post('/references', data),
+    update: (id, data) => api.put(`/references/${id}`, data),
+    delete: (id) => api.delete(`/references/${id}`)
 };
 
 // Users API
 export const usersAPI = {
-    getAll: () => axios.get(`${API_URL}/users`),
-    getById: (id) => axios.get(`${API_URL}/users/${id}`),
-    create: (data) => axios.post(`${API_URL}/users`, data),
-    update: (id, data) => axios.put(`${API_URL}/users/${id}`, data),
-    delete: (id) => axios.delete(`${API_URL}/users/${id}`)
+    getAll: () => api.get('/users'),
+    getById: (id) => api.get(`/users/${id}`),
+    create: (data) => api.post('/users', data),
+    update: (id, data) => api.put(`/users/${id}`, data),
+    delete: (id) => api.delete(`/users/${id}`)
 };

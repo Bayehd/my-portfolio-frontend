@@ -1,0 +1,287 @@
+{
+    "title": "edit-project",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 739,
+            "height": 857,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "http://localhost:5173/projects",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "http://localhost:5173/projects",
+                    "title": "client"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "article.reverse button:nth-of-type(1)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/article[2]/div[2]/div[4]/button[1]"
+                ],
+                [
+                    "pierce/article.reverse button:nth-of-type(1)"
+                ]
+            ],
+            "offsetY": 28.640625,
+            "offsetX": 17.59375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "offsetY": 29.5546875,
+            "offsetX": 442.5
+        },
+        {
+            "type": "change",
+            "value": "Psyflo - AI Mental Health Companion - Ai edege of innovation Hackathon 2026",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "offsetY": 23.5546875,
+            "offsetX": 261.5
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "Psyflo - AI Mental Health Companion - AI edege of innovation Hackathon 2026",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Update Project"
+                ],
+                [
+                    "div.modal-overlay button.btn-primary"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[9]/button[2]"
+                ],
+                [
+                    "pierce/div.modal-overlay button.btn-primary"
+                ],
+                [
+                    "text/Update Project"
+                ]
+            ],
+            "offsetY": 25.6171875,
+            "offsetX": 52.109375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "article:nth-of-type(1) button:nth-of-type(1)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/article[1]/div[2]/div[4]/button[1]"
+                ],
+                [
+                    "pierce/article:nth-of-type(1) button:nth-of-type(1)"
+                ]
+            ],
+            "offsetY": 15.375,
+            "offsetX": 27.59375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "offsetY": 26.5546875,
+            "offsetX": 293.5
+        },
+        {
+            "type": "change",
+            "value": "IT Service Desk Management System- W",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "w",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "IT Service Desk Management System- West africa G",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "g",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "IT Service Desk Management System- West africa Gas P",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "p",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "IT Service Desk Management System- West africa Gas Pipeline",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Update Project"
+                ],
+                [
+                    "div.modal-overlay button.btn-primary"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[9]/button[2]"
+                ],
+                [
+                    "pierce/div.modal-overlay button.btn-primary"
+                ],
+                [
+                    "text/Update Project"
+                ]
+            ],
+            "offsetY": 15.6171875,
+            "offsetX": 66.109375
+        }
+    ]
+}

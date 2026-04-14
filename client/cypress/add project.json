@@ -1,0 +1,1174 @@
+{
+    "title": "add project",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 739,
+            "height": 857,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "http://localhost:5173/projects",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "http://localhost:5173/projects",
+                    "title": "client"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/+ Add New Project"
+                ],
+                [
+                    "div.projects-header > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[1]/button"
+                ],
+                [
+                    "pierce/div.projects-header > button"
+                ],
+                [
+                    "text/+ Add New Project"
+                ]
+            ],
+            "offsetY": 17.109375,
+            "offsetX": 86.28125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/+ Add New Project"
+                ],
+                [
+                    "div.projects-header > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[1]/button"
+                ],
+                [
+                    "pierce/div.projects-header > button"
+                ],
+                [
+                    "text/+ Add New Project"
+                ]
+            ],
+            "offsetY": 17.109375,
+            "offsetX": 86.28125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "offsetY": 4.5546875,
+            "offsetX": 229.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "offsetY": 4.5546875,
+            "offsetX": 229.5
+        },
+        {
+            "type": "change",
+            "value": "t",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "t",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "te",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "e",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "tes",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "s",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "test",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "t",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[2]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) > textarea"
+                ]
+            ],
+            "offsetY": 14.4609375,
+            "offsetX": 183.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[2]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) > textarea"
+                ]
+            ],
+            "offsetY": 14.4609375,
+            "offsetX": 183.5
+        },
+        {
+            "type": "change",
+            "value": "t",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[2]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "t",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "te",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[2]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "e",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "tes",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[2]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "s",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "test",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[2]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "t",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "test1",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[2]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "1",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "offsetY": 44.7734375,
+            "offsetX": 161.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "offsetY": 44.7734375,
+            "offsetX": 161.5
+        },
+        {
+            "type": "change",
+            "value": "c",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "c",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cy",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "y",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cyp",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "p",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypr",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "r",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypre",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "e",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypres",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "s",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypress",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "s",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypress ",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": " ",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypress t",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "t",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypress te",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "e",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypress tes",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "s",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypress test",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "t",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypress testi",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "i",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypress testin",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "n",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "cypress testing",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[3]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "g",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(4) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[4]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) > textarea"
+                ]
+            ],
+            "offsetY": 39.5859375,
+            "offsetX": 166.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(4) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[4]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) > textarea"
+                ]
+            ],
+            "offsetY": 39.5859375,
+            "offsetX": 166.5
+        },
+        {
+            "type": "change",
+            "value": "su",
+            "selectors": [
+                [
+                    "div:nth-of-type(4) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[4]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "s",
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "u",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "suc",
+            "selectors": [
+                [
+                    "div:nth-of-type(4) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[4]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "c",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "succ",
+            "selectors": [
+                [
+                    "div:nth-of-type(4) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[4]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "c",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "succe",
+            "selectors": [
+                [
+                    "div:nth-of-type(4) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[4]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "e",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "succes",
+            "selectors": [
+                [
+                    "div:nth-of-type(4) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[4]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "s",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "success",
+            "selectors": [
+                [
+                    "div:nth-of-type(4) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[4]/textarea"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "s",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/React, Node.js, MongoDB"
+                ],
+                [
+                    "div:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[5]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 18.3984375,
+            "offsetX": 113.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/React, Node.js, MongoDB"
+                ],
+                [
+                    "div:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[5]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 18.3984375,
+            "offsetX": 113.5
+        },
+        {
+            "type": "change",
+            "value": "ReactNative and Nextjs, firebase cloud",
+            "selectors": [
+                [
+                    "aria/React, Node.js, MongoDB"
+                ],
+                [
+                    "div:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[5]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(5) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(6)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[6]"
+                ],
+                [
+                    "pierce/div:nth-of-type(6)"
+                ]
+            ],
+            "offsetY": 28.8984375,
+            "offsetX": 136.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(6)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[6]"
+                ],
+                [
+                    "pierce/div:nth-of-type(6)"
+                ]
+            ],
+            "offsetY": 28.8984375,
+            "offsetX": 136.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria//images/Psyflow.png or any image link"
+                ],
+                [
+                    "div:nth-of-type(6) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[6]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(6) > input"
+                ]
+            ],
+            "offsetY": 40.3046875,
+            "offsetX": 136.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria//images/Psyflow.png or any image link"
+                ],
+                [
+                    "div:nth-of-type(6) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[6]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(6) > input"
+                ]
+            ],
+            "offsetY": 40.3046875,
+            "offsetX": 136.5
+        },
+        {
+            "type": "change",
+            "value": "https://www.pexels.com/video/aerial-view-of-olympos-beach-33007496/",
+            "selectors": [
+                [
+                    "aria//images/Psyflow.png or any image link"
+                ],
+                [
+                    "div:nth-of-type(6) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[6]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(6) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/https://example.com"
+                ],
+                [
+                    "div:nth-of-type(7) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[7]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(7) > input"
+                ]
+            ],
+            "offsetY": 2.2109375,
+            "offsetX": 182.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/https://example.com"
+                ],
+                [
+                    "div:nth-of-type(7) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[7]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(7) > input"
+                ]
+            ],
+            "offsetY": 2.2109375,
+            "offsetX": 182.5
+        },
+        {
+            "type": "change",
+            "value": "https://psyflo.vercel.app/",
+            "selectors": [
+                [
+                    "aria/https://example.com"
+                ],
+                [
+                    "div:nth-of-type(7) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[7]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(7) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/https://github.com/..."
+                ],
+                [
+                    "div:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[8]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 20.1171875,
+            "offsetX": 184.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/https://github.com/..."
+                ],
+                [
+                    "div:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[8]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 20.1171875,
+            "offsetX": 184.5
+        },
+        {
+            "type": "change",
+            "value": "https://github.com/psyflow-team/PsyFlo--AI-Mental--Health--Companion",
+            "selectors": [
+                [
+                    "aria/https://github.com/..."
+                ],
+                [
+                    "div:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[8]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(8) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Add Project"
+                ],
+                [
+                    "div.modal-overlay button.btn-primary"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[9]/button[2]"
+                ],
+                [
+                    "pierce/div.modal-overlay button.btn-primary"
+                ],
+                [
+                    "text/Add Project"
+                ]
+            ],
+            "offsetY": 14.6171875,
+            "offsetX": 54.875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Add Project"
+                ],
+                [
+                    "div.modal-overlay button.btn-primary"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div/div/div[2]/div/form/div[9]/button[2]"
+                ],
+                [
+                    "pierce/div.modal-overlay button.btn-primary"
+                ],
+                [
+                    "text/Add Project"
+                ]
+            ],
+            "offsetY": 14.6171875,
+            "offsetX": 54.875
+        }
+    ]
+}

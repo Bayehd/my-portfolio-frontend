@@ -96,6 +96,43 @@
   background-color: #f0f7ff;
 }
 
+.logout-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  color: #555;
+  font-weight: 500;
+  text-transform: capitalize;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.logout-btn:hover {
+  color: #106ebe;
+  background-color: #f0f7ff;
+}
+
+/* For mobile logout button */
+.mobile-nav-link.logout-btn {
+  display: block;
+  color: #555;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.mobile-nav-link.logout-btn:hover {
+  color: #106ebe;
+  background-color: #f0f7ff;
+}
+
 /* Active link indicator */
 .nav-link.active {
   color: #106ebe;
