@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'  
 import axios from 'axios'
 import '../styles/auth.css'
 
@@ -84,7 +84,7 @@ function Login() {
         </form>
 
         <p className="auth-link">
-          Don't have an account? <a href="/signup">Sign up</a>
+          Don't have an account? <Link to="/signup">Sign up</Link>  {/* ← Changed from <a href> */}
         </p>
       </div>
     </div>
