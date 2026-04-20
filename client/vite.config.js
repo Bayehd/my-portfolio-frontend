@@ -9,5 +9,16 @@ export default defineConfig({
     hmr: {
       overlay: false
     }
-  }
+  },
+  build: {
+    outDir: 'dist',
+    // Copy _redirects to dist folder during build
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  },
+  // Ensure public folder assets are copied
+  publicDir: 'public'
 })
